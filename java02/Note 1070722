@@ -1,0 +1,57 @@
+資策會電腦管理者密碼 Ox23265860
+https://github.com/bradchao/FSIT05_Java/
+https://github.com/doraboy/init01
+
+JRE JAVA 執行環境
+JDK JAVA 開發者工具(包含JRE)
+IDE 整合開發環境 例如Eclipse ,IntelliJ (google Android開發的基礎)
+
+JAVA API 最重要的東西
+https://docs.oracle.com/javase/7/docs/api/
+
+http://java.sun.com
+JAVA SE 標準版 (大部分用到SE7 有些像Android可能會應用到SE8)
+JAVA EE 網路應用(後端) 注重穩定性 安全性例如金融機構
+
+JAVA開發者工具沒有跨平台
+JAVA編譯後執行檔案才可跨平台
+
+
+命令提示字元"set",可看環境變數Path如下(看作業系統是否有java執行環境JRE)
+Path=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windo
+ws\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\no
+dejs\;C:\Users\user\AppData\Roaming\npm;C:\Users\user\AppData\Local\Programs\Fid
+dler
+
+C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\
+
+
+命令提示字元"javac",可看作業系統是否有安裝JAVA 開發工具
+
+C:\Users\user>C:\Java\jdk-10.0.2\bin\javac -version
+
+在命令列 路徑如果包含空格 應該要加" " 例如 C:\"Program Files"
+
+設定環境變數(系統變數優於使用者變數,若有相同者則覆蓋過去),環境變數變更後,所有程式須重開才會重讀(更新)環境變數
+
+命令提示字元
+"dir"查看目錄檔案
+"javac"編譯.java檔案
+"java"執行java class檔案
+
+---------------------------------------------------------------------------------
+
+JAVA語法
+1.大小寫嚴格區分
+2.關鍵字通常為全小寫,故自訂的名稱可用大寫避免撞到關鍵字)
+3.各敘述句不是用換列符號來隔開
+4.
+java project>Package Package名稱 慣例為:用網域名稱倒過來+.package檔名 ex: tw.org.iii.mytest
+"."代表子目錄
+java project>Package>class 名稱 慣例首字為大寫字母
+5.println代表prinr後換列
+6.//單列註解
+7.Eclipse IDE: sysout 按alt+/ 會變成System.out.println();
+8.System :標準輸入,標準輸出,錯誤輸出
+9.https port:80 https port:443 ssh:22
+10.JAVA變數一定要先行宣告,指定變數形態(不能改),才能使用
