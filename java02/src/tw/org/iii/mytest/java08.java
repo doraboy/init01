@@ -12,9 +12,9 @@ public class java08 {
 		//從1753年開始 排除1752年(含)以前的萬年曆閏年錯誤計算
 		int year=Integer.parseInt(a1);//String轉換為int
 		
-		if(year % 4!=0)
+		if(year % 4!=0)//不被4整除
 		{System.out.println("非閏年");}	
-		else 
+		else //被4整除
 		{
 		 if(year % 100==0)//被100整除
 		 {
@@ -26,7 +26,5 @@ public class java08 {
 		 else//不被100整除
 		 {System.out.println("閏年");}
 		}
-
 	}
-
 }
