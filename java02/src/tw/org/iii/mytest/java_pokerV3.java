@@ -7,6 +7,24 @@ public class java_pokerV3 {
 		boolean isRepeat;
 		int temp;
 		
+		for(int i=0;i<poker.length;i++) {			
+			do {//至少做一次
+			    temp=(int)(Math.random()*52);
+			
+			//檢查機制
+			isRepeat=false;
+			for(int j=0;j<i;j++) {
+				if(poker[j]==temp) {
+					isRepeat=true;
+					break;
+				}
+			}
+		}while(isRepeat);//若重複則重洗
+		
+		//出上面迴圈代表已經洗到不重複
+		poker[i]=temp;
+		System.out.println(poker[i]);
+		
 		//作業:請用只洗51次的洗牌法(與最後一張交換)
 
 		
