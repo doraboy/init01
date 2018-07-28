@@ -5,12 +5,10 @@ public class java14 {
 	public static void main(String[] args) {
 		
 		long start=System.currentTimeMillis();//傳回目前時間(毫秒),long型態數字
-		//Unix紀元,從1970/1/1 0:0:0開始起算
-				
-		boolean isPrime=true;
+		//Unix紀元,從1970/1/1 0:0:0開始起算	
 		
 		for(int i=1;i<=100;i++) {
-
+			boolean isPrime=true;
 			for(int j=2;j<i/2;j++) {
 				if(i%j==0) {
 					isPrime=false;
@@ -24,7 +22,7 @@ public class java14 {
 		}
 		
 		
-		System.out.println(System.currentTimeMillis()-start);
+		System.out.println("總執行時間(毫秒)為:"+(System.currentTimeMillis()-start));
 	}
 
 }

@@ -17,7 +17,7 @@ public class java13_2 {
 		System.out.println("-----------------------------------------------------------");
 		}
 		
-		if(max_number%4!=0) {
+		if((max_number-1)%4!=0) {
 		for(int i=1; i<=max_number;i++ ){
 			for(int j=max_number-max_number%4+2; j<=max_number;j++ ){
 				System.out.print(j+" x "+i+" = "+i*j+"\t");	//\t代表tab鍵
