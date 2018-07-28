@@ -6,10 +6,13 @@ public class java17 {
 		int[] number = new int[7];
 
 		for(int i=0;i<1000000;i++){//擲1000000次骰子
-		int a=(int)(Math.random()*6)+1;
-		if(a>=1 && a<=6) number[a]++;
+		int point=(int)(Math.random()*9)+1;//加鉛的骰子,4,5,6機率加大
+		if(point>=1 && point<=9) {
+			number[point>=7?point-3:point]++;//三元運算式
+		}
 		else number[0]++;
 		}
+
 		
 		if(number[0]==0){
 			for(int i=1;i<number.length;i++)
