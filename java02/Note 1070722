@@ -57,3 +57,8 @@ java project>Package>class 名稱 慣例首字為大寫字母
 8.System :標準輸入,標準輸出,錯誤輸出
 9.https port:80 https port:443 ssh:22
 10.JAVA變數一定要先行宣告,指定變數形態(不能改),才能使用
+11.JAVA為純物件導向語言,一定要用類別(class),類別用來定義物件(object),再用類別產生物件實體
+12.自定義類別:package tw.org.iii.mytest; "package"代表這支程式的安裝(存放)路徑
+13.匯入其他api下的class寫法例如:import java.util.Arrays;
+14.java.lang底下的任何class都不需要import(會自動載入)
+15.任何JAVA類別程式,一定只有一個public class(任何人都可以存取),且命名必為檔案名稱,其他class,只能被同路徑(package)下的class存取
