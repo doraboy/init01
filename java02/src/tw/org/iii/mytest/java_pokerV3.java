@@ -16,9 +16,10 @@ public class java_pokerV3 {
 		
 		for(int i=0;i<poker.length;i++) {//進行換牌動作
 			temp=(int)(Math.random()*52);
-			poker_temp=poker[temp];
-			poker[temp]=poker[poker.length-i-1];
-			poker[poker.length-i-1]=poker_temp;
+			poker_temp=poker[temp];//儲存第temp張牌的值
+			poker[temp]=poker[poker.length-i-1];//第temp張指定為最後一張的值
+			poker[poker.length-i-1]=poker_temp;//最後一張的值指定為第temp張原本的值
+			//隨著換牌進行(i變大),已洗過的放後面,每次換牌的"最後一張"(poker.length-i-1)愈來愈前面
 		}
 		
 
