@@ -15,7 +15,7 @@ public class Bike {//對外宣稱類別(通常首字大寫),括號內為類別�
 	 *  (1)public:大家都可存取
 	 *  (2)protected:該類別外是唯獨
 	 *  (3)沒有:跟public一樣
-	 *  (4)private:只有該類別可存取
+	 *  (4)private:只有該類別及子類別可存取
 	 *5.overload:同名異式,方法和建構式都可能有
 	 */
 	protected double speed;//private代表該屬性只能在該類別中被存取
