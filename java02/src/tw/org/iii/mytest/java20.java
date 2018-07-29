@@ -10,16 +10,10 @@ public class java20 {
 		int[] a = new int[3];//陣列即為一個物件
 		System.out.println(a);//[I@記憶體位置
 		
-		System.out.println(b1.getSpeed());
+		System.out.println(b1.getSpeed());//測速
 		//has-a用.來表示
-		b1.upSpeed();
-		b1.upSpeed();
-		b1.upSpeed();
-		b1.upSpeed();
-		b1.upSpeed();
-		b1.upSpeed();
-		b1.upSpeed();
-		b1.upSpeed();
+		for(int i=0;i<8;i++) b1.upSpeed();//加速8次
+
 		System.out.println(b1.getSpeed());
 		System.out.println(b2.getSpeed());
 	}
