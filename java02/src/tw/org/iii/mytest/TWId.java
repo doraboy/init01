@@ -13,15 +13,16 @@ public class TWId {
 	}//傳入boolean 故呼叫下面那一個建構式
 	
 	TWId(boolean isMale){
-		this(isMale,(int)(Math.random()*26));
+		this(isMale,(int)(Math.random()*26));//呼叫第24行建構式
 	}	
 	
 	TWId(int area){
-		this((int)(Math.random()*2)==0,area);
+		this((int)(Math.random()*2)==0,area);//呼叫第24行建構式
 	}
 	
 	
 	TWId(boolean isMale, int area){
+		//super();//呼叫並建立父類別物件實體,可省略
 		String i1 = letters.substring(area,area+1);
 		String i2 = isMale?"1":"2";
 		//寫法1:

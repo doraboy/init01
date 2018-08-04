@@ -5,6 +5,7 @@ public class Bike {//對外宣稱類別(通常首字大寫),括號內為類別�
 	 *類別的實作內容(has-a)如下:
 	 *1.建構式:只有執行一次(初始化),名稱跟類別名稱必相同
 	 *        建構式可以有多個,每個都不同,讓使用者選擇使用
+	 *        同名異式:Overload
 	 *2.靜態:這個類別所擁有的東西:屬性Field
 	 *       (即不同物件間,最大的差異在於屬性,最重要)
 	 *       屬性一般要封裝起來(private),避免使用者直接存取
@@ -13,12 +14,12 @@ public class Bike {//對外宣稱類別(通常首字大寫),括號內為類別�
 	 *       方法則不一定為private
 	 *4.屬性和方法有以下四種修飾詞
 	 *  (1)public:大家都可存取
-	 *  (2)protected:該類別外是唯獨
-	 *  (3)沒有:跟public一樣
-	 *  (4)private:只有該類別及子類別可存取
+	 *  (2)protected:該類別外是唯讀
+	 *  (3)沒有:在同路徑(package)下跟public一樣,可以任意存取
+	 *  (4)private:只有該類別可存取
 	 *5.overload:同名異式,方法和建構式都可能有
 	 */
-	protected double speed;//private代表該屬性只能在該類別中被存取
+	double speed;//private代表該屬性只能在該類別中被存取
 	
 	Bike(){
 		speed=4.2;
