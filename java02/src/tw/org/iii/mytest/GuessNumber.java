@@ -68,10 +68,10 @@ public class GuessNumber extends JFrame {
 		input.setText("");
 		if(result.equals("3A0B")) {
 			JOptionPane.showMessageDialog(null,"恭喜猜中了!");
-			newGame();
+//			newGame();
 		}else if(counter == 10) {
 			JOptionPane.showMessageDialog(null,"Loser:答案為"+answer);
-			newGame();
+//			newGame();
 		}
 	}
 
@@ -105,7 +105,22 @@ public class GuessNumber extends JFrame {
 	
 	String checkAB() {
 		int a,b; a = b = 0;
-		String guess = input.getText();//得到使用者輸入值
+		boolean isRight=false;//判斷輸入是否正確
+		//得到使用者輸入值
+		String guess = input.getText();
+		
+//		do {
+//
+//		if(guess.matches("^[0-9]*3$")) {
+//			isRight = true;
+//		  }else{
+//			  System.out.println("輸入錯誤,請重新輸入");
+//			  input = new JTextField();
+//			  guess = input.getText();
+//		  }
+//		} while(isRight==false);
+		
+
 		
 		//判斷幾A幾B
 		for(int i=0;i<guess.length();i++) {
@@ -120,42 +135,42 @@ public class GuessNumber extends JFrame {
 	}
 	
 	
-	public void newGame() {//重啟遊戲
-		
-		counter=0;
-		answer = createAnswer();
-		guess = new JButton("猜");
-		input = new JTextField();
-		hist = new JTextArea();
-		input.setFont(new Font("Default", Font.PLAIN, 24));
-		hist.setFont(new Font("Default", Font.BOLD+Font.ITALIC, 24));
-		
-		setLayout(new BorderLayout());//不在意物件名稱,只需要這個物件實體
-		add(hist,BorderLayout.CENTER);
-		
-		JPanel top = new JPanel(new BorderLayout());//宣告top的隔間
-		//不需擁有,單純用來初始化,故宣告成區域變數
-		top.add(guess,BorderLayout.EAST);
-		top.add(input,BorderLayout.CENTER);
-
-		add(top,BorderLayout.NORTH);//將隔間放入視窗內(南,北優於東,西,最後是剩下的部分)
-		
-		guess.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				doGuess();
-			}
-		});//有聽才會回應
-		//guess本身是一個按鈕的物件實體,它本身不會聽動作
-		//故委託其祖先類別的動作傾聽者
-
-		
-		setSize(640, 480);
-		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	}
-	
+//	public void newGame() {//重啟遊戲
+//		
+//		counter=0;
+//		answer = createAnswer();
+//		guess = new JButton("猜");
+//		input = new JTextField();
+//		hist = new JTextArea();
+//		input.setFont(new Font("Default", Font.PLAIN, 24));
+//		hist.setFont(new Font("Default", Font.BOLD+Font.ITALIC, 24));
+//		
+//		setLayout(new BorderLayout());//不在意物件名稱,只需要這個物件實體
+//		add(hist,BorderLayout.CENTER);
+//		
+//		JPanel top = new JPanel(new BorderLayout());//宣告top的隔間
+//		//不需擁有,單純用來初始化,故宣告成區域變數
+//		top.add(guess,BorderLayout.EAST);
+//		top.add(input,BorderLayout.CENTER);
+//
+//		add(top,BorderLayout.NORTH);//將隔間放入視窗內(南,北優於東,西,最後是剩下的部分)
+//		
+//		guess.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				doGuess();
+//			}
+//		});//有聽才會回應
+//		//guess本身是一個按鈕的物件實體,它本身不會聽動作
+//		//故委託其祖先類別的動作傾聽者
+//
+//		
+//		setSize(640, 480);
+//		setVisible(true);
+//		setDefaultCloseOperation(EXIT_ON_CLOSE);
+//	}
+//	
 	public static void main(String[] args) {
 		new GuessNumber();
 		
