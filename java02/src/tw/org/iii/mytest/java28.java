@@ -61,7 +61,7 @@ public class java28 {
 
 class Brad281 {
 	int s1,s2,s3;
-	Brad281 setS1(int s1) {this.s1=s1;return this;}
+	Brad281 setS1(int s1) {this.s1=s1;return this;}//將物件實體傳回
 	Brad281 setS2(int s2) {this.s2=s2;return this;}
 	Brad281 setS3(int s3) {this.s3=s3;return this;}
 	int calSum(){return s1+s2+s3;}

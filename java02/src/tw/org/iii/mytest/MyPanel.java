@@ -8,46 +8,21 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
-public class MyPanel extends JPanel{
+public class MyPanel extends JPanel implements MouseListener{
+	//宣告(對外宣稱)這個類別自己就是MouseListener
+	private int x,y;
+	Color color;
+	
 	public MyPanel() {
-		System.out.println("MyPanel()");
-		addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				//滑鼠按下去,重畫紅色圓
-				System.out.println(e.getX());
-				System.out.println(e.getY());
-				repaint();
-				
-			}
-		});
+		color = Color.BLUE;
 	}
-
+	
+	public MyPanel(int x,int y) {
+		this.x=x;this.y=y;
+		color = Color.red;
+		System.out.println("MyPanel()");
+		addMouseListener(this);//下方必須實作MouseListener的方法
+	}
 	
 	
 	//作業:滑鼠點哪裡,紅圈中心出現哪裡
@@ -65,8 +40,59 @@ public class MyPanel extends JPanel{
 		super.paintComponent(g);
 		System.out.println("paintComponent");
 		Graphics2D g2d = (Graphics2D)g;//此物件實體被自動創造,一定存在
-		g2d.setColor(Color.red);
-		g2d.fillOval(0, (int)(Math.random()*400), 80, 80);
+		g2d.setColor(color);
+		g2d.fillOval(x,y, 80, 80);
+		
+	}
+
+
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		//滑鼠按下去,重畫紅色圓
+		System.out.println(e.getX()-40);
+		System.out.println(e.getY()-40);
+		System.out.println("A");
+		x=e.getX()-40;
+		y=e.getY()-40;
+		repaint();//繼承至JPanel的方法
+		
+	}
+
+
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}	
 }

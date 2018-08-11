@@ -7,12 +7,17 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
 public class java38 extends JFrame{
-	private MyPanel myPanel;
+	//private MyPanel myPanel;
+	//private MyPanelV2 myPanel;
+	//private MyPanelV3 myPanel;
+	private MyPanelV4 myPanel;
 	
 	public java38() {
 		setLayout(new BorderLayout());
 		
-		myPanel = new MyPanel();
+		//myPanel = new MyPanelV2();
+		//myPanel = new MyPanelV3();
+		myPanel = new MyPanelV4();
 		add(myPanel,BorderLayout.CENTER);//要add進去才會有元件的表現
 		
 		addWindowListener(new MyListener());
