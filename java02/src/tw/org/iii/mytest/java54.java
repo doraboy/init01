@@ -7,7 +7,7 @@ public class java54 {//讀取.dat檔案
 //型別和順序不能改變
 	
 	public static void main(String[] args) {
-		//try完可自動關閉檔案
+		//try() {}...catch... try完可自動關閉檔案,括號內要符合可自動關閉介面
 		try(DataInputStream din = 
 				new DataInputStream(
 						new FileInputStream("dir1/brad.dat"))) {

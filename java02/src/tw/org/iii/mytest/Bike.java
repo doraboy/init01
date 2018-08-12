@@ -1,6 +1,8 @@
 package tw.org.iii.mytest;//代表路徑
 
-public class Bike {//對外宣稱類別(通常首字大寫),括號內為類別的實作
+import java.io.Serializable;
+
+public class Bike  implements Serializable{//對外宣稱類別(通常首字大寫),括號內為類別的實作
 	/*
 	 *類別的實作內容(has-a)如下:
 	 *1.建構式:只有執行一次(初始化),名稱跟類別名稱必相同
