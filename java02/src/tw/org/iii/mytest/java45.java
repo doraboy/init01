@@ -1,6 +1,6 @@
 package tw.org.iii.mytest;
 
-import java.io.File;
+import java.io.File;//File類別不涉及檔案內容的修改
 import java.io.IOException;
 
 public class java45 {
