@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class java65 {//建立TCP傳輸檔案的接收端
+public class java65 {//建立TCP傳輸檔案的接收端,傳輸非文字資料(二進制檔案)
 
 
 	public static void main(String[] args) {
