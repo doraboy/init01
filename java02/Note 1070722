@@ -68,3 +68,5 @@ java project>Package>class 名稱 慣例首字為大寫字母
 13.匯入其他api下的class寫法例如:import java.util.Arrays;
 14.java.lang底下的任何class都不需要import(會自動載入)
 15.任何JAVA類別程式,一定只有一個public class(任何人都可以存取),且命名必為檔案名稱,其他class,只能被同路徑(package)下的class存取
+16.<E>代表泛型
+17.介面Set特性:(1)無順序性(2)裡面元素不會重複
