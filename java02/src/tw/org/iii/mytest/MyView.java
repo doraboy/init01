@@ -11,6 +11,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 import javax.imageio.ImageIO;
@@ -18,10 +19,10 @@ import javax.swing.JPanel;
 
 public class MyView extends JPanel{
 	private MyMouseListener mouseListener = new MyMouseListener();	
-	//宣告一個空的資料結構,來存放MyPoint(收集點座標)
+	//宣告一個空的資料結構,來存放點座標
 	//畫多條線
-	private LinkedList<LinkedList<MyPoint>> lines = new LinkedList<>();
-	private LinkedList<LinkedList<MyPoint>> recycle = new LinkedList<>();//線條的資源回收桶
+	private LinkedList<LinkedList<HashMap<String, Integer>>> lines = new LinkedList<>();
+	private LinkedList<LinkedList<HashMap<String, Integer>>> recycle = new LinkedList<>();//線條的資源回收桶
 	
 	public MyView() {
 		setBackground(Color.YELLOW);
@@ -41,12 +42,13 @@ public class MyView extends JPanel{
 		g2d.setStroke(new BasicStroke(4));
 		g2d.setColor(Color.BLUE);
 		
-		for(LinkedList<MyPoint> line : lines){//畫所有線
+		for(LinkedList<HashMap<String, Integer>> line : lines){//畫所有線
 			//畫單條線
 			for(int i=1; i<line.size(); i++) {
-				MyPoint p0 = line.get(i-1);
-				MyPoint p1 = line.get(i);
-				g2d.drawLine(p0.x, p0.y, p1.x, p1.y);
+				HashMap<String,Integer> p0 = line.get(i-1);
+				HashMap<String,Integer> p1 = line.get(i);
+				g2d.drawLine(p0.get("x"), p0.get("y"), 
+						p1.get("x"), p1.get("y"));
 			}
 		}
 	}
@@ -95,9 +97,9 @@ public class MyView extends JPanel{
 	}
 
 
-	public LinkedList<LinkedList<MyPoint>> getLines() {return lines;}
+	public LinkedList<LinkedList<HashMap<String, Integer>>> getLines() {return lines;}
 
-	public void setLines(LinkedList<LinkedList<MyPoint>> lines) {
+	public void setLines(LinkedList<LinkedList<HashMap<String, Integer>>> lines) {
 		this.lines = lines;
 		repaint();
 	}
@@ -109,8 +111,13 @@ public class MyView extends JPanel{
 		@Override
 		public void mousePressed(MouseEvent e) {
 			//點下去時加入新線條
-			LinkedList<MyPoint> line = new LinkedList<>();
-			MyPoint point = new MyPoint(e.getX(),e.getY());
+			LinkedList<HashMap<String, Integer>> line = new LinkedList<>();
+	
+			//MyPoint point = new MyPoint(e.getX(),e.getY());
+			HashMap<String,Integer> point = new HashMap<>();
+			point.put("x", e.getX());
+			point.put("y", e.getY());		
+			
 			line.add(point);
 			lines.add(line);
 			//要畫新線時,資源回收桶要清空
@@ -119,7 +126,9 @@ public class MyView extends JPanel{
 		
 		@Override
 		public void mouseDragged(MouseEvent e) {
-			MyPoint point = new MyPoint(e.getX(),e.getY());
+			HashMap<String, Integer> point = new HashMap<String, Integer>();
+			point.put("x", e.getX());
+			point.put("y", e.getY());
 			
 			//新的點要加入最新(資料結構最後)的那條線中
 			lines.getLast().add(point);
@@ -129,9 +138,9 @@ public class MyView extends JPanel{
 	
 }
 
-//宣告點座標的public類別
-class MyPoint implements Serializable{
-	int x, y;
-	public MyPoint(int x, int y) {this.x = x; this.y = y;}
-}
+////宣告點座標的public類別
+//class MyPoint implements Serializable{
+//	int x, y;
+//	public MyPoint(int x, int y) {this.x = x; this.y = y;}
+//}
 

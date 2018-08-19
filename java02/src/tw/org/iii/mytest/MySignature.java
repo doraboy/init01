@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 import javax.imageio.ImageIO;
@@ -130,7 +131,7 @@ public class MySignature extends JFrame{//簽名程式
 	}
 	
 	private void saveObject() {
-		LinkedList<LinkedList<MyPoint>> lines = myView.getLines();
+		LinkedList<LinkedList<HashMap<String, Integer>>> lines = myView.getLines();
 		try {
 			ObjectOutputStream oout =
 					new ObjectOutputStream(
@@ -150,8 +151,8 @@ public class MySignature extends JFrame{//簽名程式
 				ObjectInputStream oin = 
 					new ObjectInputStream(
 						new FileInputStream("dir1/brad.obj"));
-				LinkedList<LinkedList<MyPoint>> lines = 
-					(LinkedList<LinkedList<MyPoint>>)oin.readObject();
+				LinkedList<LinkedList<HashMap<String, Integer>>> lines = 
+					(LinkedList<LinkedList<HashMap<String, Integer>>>)oin.readObject();
 				oin.close();
 				myView.setLines(lines);
 			} catch (Exception e) {
