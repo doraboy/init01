@@ -17,8 +17,10 @@ public class java79 {
 		obj2.start();
 		System.out.println("OK1");
 		try {
-			obj2.join();//主緒中呼叫某執行緒的join方法
+			obj2.join(2000);//主緒中呼叫某執行緒的join方法
 			//會將該物件run方法併入主緒中
+			//若放入參數(單位為毫秒),則在讓obj2於該時間內優先執行
+			//之後主緒會和其他所有執行緒同時排隊等待執行
 		} catch (InterruptedException e) {}
 		
 		System.out.println("OK2");
