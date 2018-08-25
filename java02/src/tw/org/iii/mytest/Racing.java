@@ -3,6 +3,10 @@ package tw.org.iii.mytest;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,8 +18,16 @@ public class Racing extends JFrame{
 	private Horse[] horses = new Horse[8];
 	private int rank = 0;
 	
-	public Racing() {
+	public Racing() {	
 		super("賽跑遊戲");
+		
+		//加時鐘
+		Date date = new Date();
+		//建議使用Calendar,方法很多,處理完再轉輸出即可
+		Calendar calendar = Calendar.getInstance();
+		DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		System.out.println(df.format(date));
+		
 		//9個rows跑道
 		setLayout(new GridLayout(9, 0));
 		
