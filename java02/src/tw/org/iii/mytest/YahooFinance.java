@@ -53,5 +53,9 @@ public class YahooFinance {//取得網頁原始碼訊息(文字訊息),可網路
 		
 
 	}
+	
+	public getNowPrice(String name){
+		
+	}
 
 }
